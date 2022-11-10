@@ -176,10 +176,10 @@
             columns: [
             {data: 'firstname', searchable: true, 'render': function(data, type, row){
             return row.firstname + ' ' + row.lastname}},
-            {data: 'email', searchable: true},
+            {data: 'email'},
             {data: 'mobile'},
-            {data: 'gender', searchable: true},
-            {data: 'status', searchable: true, 'render': function(data, type, row){
+            {data: 'gender'},
+            {data: 'status', 'render': function(data, type, row){
                 return row.status=='1' ? "<span class='text-success text-uppercase'>Active</span>":"<span class='text-warning text-uppercase'>Not active</span>"
             }},
             {data: 'Actions', name: 'Actions',orderable:false,serachable:false},

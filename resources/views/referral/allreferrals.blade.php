@@ -109,18 +109,18 @@
             ajax: "{{ route('allReferrals') }}",
 
             columns: [
-            {data: 'yfname', searchable: true, 'render': function(data, type, row){
+            {data: 'yfname', 'render': function(data, type, row){
                 return '<a data-id="'+row.y_id+'" id="you" class="text-dark">'+row.yfname + ' ' + row.ylname+'</a>'}},
-            {data: 'ffname', searchable: true, 'render': function(data, type, row){
+            {data: 'ffname', 'render': function(data, type, row){
                 return '<a data-id="'+row.f_id+'" id="friend" class="text-dark">'+row.ffname+ ' '+row.flname+'</a>'
             }},
             {data: 'bname', searchable:true, 'render': function(data, type, row){
                 return '<a data-id="'+row.b_id+'" id="business" class="text-dark">'+row.bname +'</a>'
             }},
-            {data: 'date_created', searchable: true, 'render': function(data, type, row){
+            {data: 'date_created', 'render': function(data, type, row){
                 return new Date(row.date_created).toLocaleDateString()
             }},
-            {data: 'feedback', serachable:true, 'render': function(data, type, row){
+            {data: 'feedback', 'render': function(data, type, row){
                 return row.feedback !== '' && row.feedback !== null ? "<span class='text-success'>Complete</span>":"<span class='text-dark d-inline mr-2'><a data-id='"+row.b_id+"' class='text-dark'>Incomp.</span></a><span class='d-inline btn btn-primary' id='fillFeedBack' data-id='"+row.b_id+"'>Fill Feedback</span>"
                 
             }},
