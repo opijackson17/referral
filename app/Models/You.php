@@ -4,6 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BusinessMail;
+use App\Mail\FriendMail;
+use App\Mail\YouMail;
 
 class You extends Model
 {
@@ -44,6 +48,10 @@ class You extends Model
             $friend = $request->only('ffname', 'flname', 'faddress', 'femail', 'fmobile');
             $friend['you_id'] = $you_id;
             Friend::create($friend);
+
+            Mail::to(self::getCurrentSavedSubmission()->yemail)->send(new YouMail(self::getCurrentSavedSubmission()));
+            Mail::to(self::getCurrentSavedSubmission()->femail)->send(new FriendMail(self::getCurrentSavedSubmission()));
+            Mail::to(self::getCurrentSavedSubmission()->bemail)->send(new BusinessMail(self::getCurrentSavedSubmission()));
 
             return $you_id;
         });
