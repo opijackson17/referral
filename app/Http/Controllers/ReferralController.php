@@ -7,6 +7,7 @@ use App\Models\Referral;
 use App\Exports\ReferralExport;
 use Maatwebsite\Excel\Excel;
 use App\Http\Controllers\BusinessController;
+use DataTables;
 
 class ReferralController extends Controller
 {
@@ -14,9 +15,7 @@ class ReferralController extends Controller
     public function index(Request $request)
     {
         if($request->ajax()){
-
-            return \DataTables::of(Referral::getReferrals())->make(true);  
-
+            return DataTables::of(Referral::getReferrals())->make(true);  
          }
         return view('referral.allreferrals', ['data' => Referral::getReferrals(), 'timeseries' => (new BusinessController)->timeSeries()]);
     }

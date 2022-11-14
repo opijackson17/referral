@@ -126,10 +126,10 @@
             }},
             ],
 
-    })
+    });
 
-     var id;
     var data = {!! $data !!}
+    var id;
 
     function tableDisplay(datafname,datalname,datamobile,dataemail) {
 
