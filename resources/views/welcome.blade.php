@@ -19,19 +19,18 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
         <style type="text/css">
-            div#social-links {
+            #social-links {
                 margin: 0 auto;
                 max-width: 500px;
             }
-            div#social-links ul li {
+            #social-links ul li {
                 display: inline-block;
             }          
-            div#social-links ul li a {
+            #social-links ul li a {
                 padding: 15px;
                 border: 1px solid #ccc;
                 margin: 1px;
                 font-size: 30px;
-                color: #332D2D;
                 background-color: #ccc;
             }
             .form-control {
@@ -266,7 +265,7 @@
             </div>
 
             <div class="row mt-4 mb-0">
-                <div class="bg-white w-50 mx-auto">
+                <div class="col-sm-12 bg-white w-50 mx-auto d-inline text-center list-style-none mx-auto text-info bg-success">
                     {!! $socialComponent !!}
                 </div>
             </div>

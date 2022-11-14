@@ -39,7 +39,7 @@ class Business extends Model
 
     public static function getBusinessReferral()
     {
-        return self::join('yous', 'yous.id', '=', 'businesses.you_id')->join('friends', 'friends.you_id', '=', 'businesses.you_id')->select('businesses.*', 'yous.*', 'friends.*', 'businesses.created_at as created_date')->get();
+        return self::join('yous', 'yous.id', '=', 'businesses.you_id')->join('friends', 'friends.you_id', '=', 'businesses.you_id')->select('businesses.bname','businesses.feedback', 'yous.yfname','yous.ylname','friends.flname', 'friends.ffname', 'businesses.created_at as created_date')->get();
     }
 
     public static function timeSeriesGraph()
