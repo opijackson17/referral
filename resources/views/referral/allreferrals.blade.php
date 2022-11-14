@@ -121,7 +121,7 @@
                 return new Date(row.date_created).toLocaleDateString()
             }},
             {data: 'feedback', 'render': function(data, type, row){
-                return row.feedback !== '' && row.feedback !== null ? "<span class='text-success'>Complete</span>":"<span class='text-dark d-inline mr-2'><a data-id='"+row.b_id+"' class='text-dark'>Incomp.</span></a><span class='d-inline btn btn-primary' id='fillFeedBack' data-id='"+row.b_id+"'>Fill Feedback</span>"
+                return row.feedback == null ? "<span class='text-dark d-inline mr-2'><a data-id='"+row.b_id+"' class='text-dark'>Incomp.</span></a><span class='d-inline btn btn-primary' id='fillFeedBack' data-id='"+row.b_id+"'>Fill Feedback</span>":"<span class='text-success'>Complete</span>"
                 
             }},
             ],
