@@ -110,6 +110,7 @@
 
             columns: [
             {data: 'yfname', 'render': function(data, type, row){
+                console.log(row)
                 return '<a data-id="'+row.y_id+'" id="you" class="text-dark">'+row.yfname + ' ' + row.ylname+'</a>'}},
             {data: 'ffname', 'render': function(data, type, row){
                 return '<a data-id="'+row.f_id+'" id="friend" class="text-dark">'+row.ffname+ ' '+row.flname+'</a>'
