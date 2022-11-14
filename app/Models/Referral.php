@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Referral extends Model
 {
@@ -11,7 +12,8 @@ class Referral extends Model
 
     public static function getReferrals()
     {
-        return \DB::table('yous')->join('friends', 'yous.id', '=', 'friends.you_id')->join('businesses', 'yous.id', '=', 'businesses.you_id')->select('yous.*', 'friends.*', 'businesses.*', 'yous.created_at as date_created', 'yous.id as y_id', 'friends.id as f_id', 'businesses.id as b_id')->get();
+        dd(DB::table('yous')->join('friends', 'yous.id', '=', 'friends.you_id')->join('businesses', 'yous.id', '=', 'businesses.you_id')->select('yous.yfname', 'friends.ffname','friends.flname','yous.ylname', 'businesses.bname', 'yous.created_at as date_created', 'yous.id as y_id', 'friends.id as f_id', 'businesses.id as b_id')->get());
+        return DB::table('yous')->join('friends', 'yous.id', '=', 'friends.you_id')->join('businesses', 'yous.id', '=', 'businesses.you_id')->select('yous.yfname', 'friends.ffname','friends.flname','yous.ylname', 'businesses.bname', 'yous.created_at as date_created', 'yous.id as y_id', 'friends.id as f_id', 'businesses.id as b_id')->get();
     }    
 
     public static function getReferralsForDownload($value)
